@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Pacifico');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600');
+@import "variables";
+
+html {
+  font-size: 62.5%; // 10px
+}
+
+body {
+  font-size: 1.6rem; // 16px
+}
+
+* {
+  font-family: 'Open Sans', sans-serif;
+  color: $grey;
+}
+
+p {
+  font-size: 1.4em;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+h1 {
+  font-size: 3em;
+  font-weight: 300;
+  line-height: 2;
+  color: $marina;
+}
+
+h2 {
+  font-size: 2.4em;
+  font-weight: 300;
+  line-height: 1.8;
+  color: $bondiBlue;
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 300;
+  line-height: 1.6;
+  color: $grey;
+}
+
+h4 {
+  font-size: 1.8em;
+  font-weight: 300;
+  line-height: 1.4;
+  color: $grey;
+}
