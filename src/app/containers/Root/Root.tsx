@@ -1,10 +1,10 @@
 import * as React from 'react';
-const styles = require('./Root.scss');
+import './Root.css'
 
 export class Root extends React.Component {
     public render() {
         return (
-            <h1 className={styles.root}>
+            <h1 className="root">
                 Welcome to Foodly
             </h1>
         );
