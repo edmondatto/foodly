@@ -1,0 +1,1 @@
+export { SearchBarContainer as SearchBar } from './SearchBar'

@@ -3,6 +3,7 @@
   "rules": {
     "import-name": false,
     "variable-name": false,
-    "prefer-array-literal": false
+    "prefer-array-literal": false,
+    "no-any": false
   }
 }

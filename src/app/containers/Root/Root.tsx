@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { SearchBar } from "../SearchBar";
 import './Root.css'
 
 export class Root extends React.Component {
@@ -6,6 +7,7 @@ export class Root extends React.Component {
         return (
             <h1 className="root">
                 Welcome to Foodly
+                <SearchBar/>
             </h1>
         );
     }
