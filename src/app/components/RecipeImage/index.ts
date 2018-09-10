@@ -1,0 +1,1 @@
+export { RecipeImage } from './RecipeImage';

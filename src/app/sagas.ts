@@ -15,7 +15,6 @@ export const handleSearch = function*(action: SearchRequestSent) {
         // TODO: Find a way to use the fork effect in order to use Task.running() to implement the 'LAGGING' functionality
         const recipes = response.data;
 
-        console.info(response);
         yield put(searchRequestStateChanged('SUCCEEDED', undefined, recipes))
     } catch (error) {
         yield put(searchRequestStateChanged('FAILED', 'Oops! Something went wrong.'))
