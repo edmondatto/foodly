@@ -1,7 +1,9 @@
 import { ActionType, AnyAction } from "./actions";
 import { initialState } from "./constants";
+import { State } from "./types";
+import { Reducer } from "redux";
 
-export function reducer(state = initialState, action: AnyAction) {
+export const reducer: Reducer<State, AnyAction> = (state = initialState, action: AnyAction): State => {
     switch (action.type) {
         case ActionType.SEARCH_REQUEST_SENT:
             return {
@@ -11,13 +13,18 @@ export function reducer(state = initialState, action: AnyAction) {
         case ActionType.SEARCH_REQUEST_STATE_CHANGED:
             return {
                 ...state,
-                error: action.payload.error,
-                recipes: action.payload.recipes,
                 searchRequest: {
-                    state: action.payload.requestState
+                    ...state.searchRequest,
+                    state: action.payload.requestState,
+                    error: action.payload.error || '',
                 }
             };
+        case ActionType.RECIPES_RECEIVED:
+            return {
+                ...state,
+                recipes: action.payload.recipes
+            }
         default:
             return state;
     }
-}
+};

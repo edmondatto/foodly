@@ -17,13 +17,10 @@ export class SearchResults extends React.Component<SearchResultsProps> {
 
     render(){
         const { recipes } = this.props;
-        // TODO: Clean this up!!!
-        // @ts-ignore
-        const renderSearchResults = recipes && recipes.meals.map(meal => <RecipeCard {...meal} key={meal.idMeal}/>);
 
         return(
             <>
-                { renderSearchResults }
+                { recipes && recipes.map(recipe => <RecipeCard {...recipe} key={recipe.idMeal}/>) }
             </>
         );
     }

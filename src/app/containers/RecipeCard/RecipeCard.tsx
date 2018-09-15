@@ -1,9 +1,11 @@
 import * as React from 'react';
-import { Meal } from "../../types";
-import { RecipeImage } from "../../components/RecipeImage";
+import { Recipe } from '../../types';
+import { RecipeImage } from '../../components/RecipeImage';
 import './RecipeCard.css';
 
-export class RecipeCard extends React.Component<Meal>{
+type RecipeCardProps = Recipe;
+
+export class RecipeCard extends React.Component<RecipeCardProps>{
     render() {
         const { strMeal, strInstructions, strMealThumb } = this.props;
 
@@ -11,7 +13,7 @@ export class RecipeCard extends React.Component<Meal>{
             <section>
                 <h4>{ strMeal }</h4>
                 <p>{ strInstructions }</p>
-                { strMealThumb && <RecipeImage imageUrl={strMealThumb} /> }
+                { strMealThumb &&  <RecipeImage src={strMealThumb} /> }
             </section>
         );
     }

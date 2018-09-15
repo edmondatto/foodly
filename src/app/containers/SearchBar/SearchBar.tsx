@@ -19,8 +19,12 @@ type SearchBarState = {
 };
 
 export class SearchBar extends React.Component<SearchBarProps, SearchBarState>{
-    state = {
+    state: SearchBarState = {
         searchString: ''
+    };
+
+    static defaultProps: Partial<SearchBarProps> = {
+        onSearchRequestSend: () => {}
     };
 
     handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {

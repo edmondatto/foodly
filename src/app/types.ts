@@ -5,11 +5,11 @@ export type Request = {
 
 export type State = {
     searchRequest: Request;
-    recipes: Meal[] | null;
+    recipes: Recipe[] | null;
     searchString: {} | null;
 }
 
-export type Meal = {
+export type Recipe = {
     idMeal: string;
     strMeal: string;
     strCategory: string;

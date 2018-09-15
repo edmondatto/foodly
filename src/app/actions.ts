@@ -1,11 +1,12 @@
-import { Request } from "./types";
+import { Request, Recipe } from "./types";
 
 export enum ActionType {
     SEARCH_REQUEST_SENT = 'SEARCH_REQUEST_SENT',
     SEARCH_REQUEST_STATE_CHANGED = 'SEARCH_REQUEST_STATE_CHANGED',
+    RECIPES_RECEIVED = 'RECIPES_RECEIVED'
 }
 
-export type AnyAction = SearchRequestSent | SearchRequestStateChanged;
+export type AnyAction = SearchRequestSent | SearchRequestStateChanged | RecipesReceived;
 
 export type SearchRequestSent = {
     type: ActionType.SEARCH_REQUEST_SENT;
@@ -18,8 +19,14 @@ export type SearchRequestStateChanged = {
     type: ActionType.SEARCH_REQUEST_STATE_CHANGED;
     payload: {
         requestState: Request['state'],
-        error?: string,
-        recipes?: []
+        error?: Request['error'],
+    }
+}
+
+export type RecipesReceived = {
+    type: ActionType.RECIPES_RECEIVED;
+    payload: {
+        recipes: Recipe[]
     }
 }
 
@@ -33,12 +40,17 @@ export const searchRequestSent = (searchString: string): SearchRequestSent => ({
 export const searchRequestStateChanged = (
     requestState: SearchRequestStateChanged['payload']['requestState'],
     error?: SearchRequestStateChanged['payload']['error'],
-    recipes?: SearchRequestStateChanged['payload']['recipes']
 ): SearchRequestStateChanged => ({
     type: ActionType.SEARCH_REQUEST_STATE_CHANGED,
     payload: {
         requestState,
         error,
+    }
+});
+
+export const recipesReceived = (recipes: Recipe[]): RecipesReceived => ({
+    type: ActionType.RECIPES_RECEIVED,
+    payload: {
         recipes
     }
 });

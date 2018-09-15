@@ -1,12 +1,10 @@
 import * as React from 'react';
 import './RecipeImage.css'
 
-type RecipeImageProps = {
-    imageUrl: string
-}
+type RecipeImageProps = React.ImgHTMLAttributes<HTMLImageElement>
 
-export const RecipeImage: React.SFC<RecipeImageProps> = (props) => {
+export const RecipeImage: React.SFC<RecipeImageProps> = ({ src }) => {
     return(
-        <img src={ props.imageUrl } />
+        <img src={ src } />
     );
 };

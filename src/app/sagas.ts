@@ -1,6 +1,6 @@
 import { searchForRecipe } from './services'
-import {all, call, put, takeLatest} from "redux-saga/effects";
-import {ActionType, SearchRequestSent, searchRequestStateChanged} from "./actions";
+import { all, call, put, takeLatest } from "redux-saga/effects";
+import { ActionType, recipesReceived, SearchRequestSent, searchRequestStateChanged } from "./actions";
 
 export const saga = function*() {
     yield all([takeLatest(ActionType.SEARCH_REQUEST_SENT, handleSearch)])
@@ -11,11 +11,10 @@ export const handleSearch = function*(action: SearchRequestSent) {
     yield put(searchRequestStateChanged('ACTIVE'));
 
     try {
-        const response = yield call(searchForRecipe, searchString);
-        // TODO: Find a way to use the fork effect in order to use Task.running() to implement the 'LAGGING' functionality
-        const recipes = response.data;
+        const recipes = yield call(searchForRecipe, searchString);
 
-        yield put(searchRequestStateChanged('SUCCEEDED', undefined, recipes))
+        yield put(searchRequestStateChanged('SUCCEEDED'));
+        yield put(recipesReceived(recipes));
     } catch (error) {
         yield put(searchRequestStateChanged('FAILED', 'Oops! Something went wrong.'))
     }
