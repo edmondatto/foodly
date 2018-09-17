@@ -1,12 +1,12 @@
 import * as React from 'react';
-import { State } from "../../types";
-import { RecipeCard } from "../RecipeCard";
 import { connect } from "react-redux";
+import { State } from "../../../types";
+import { RecipeCard } from "../RecipeCard";
 import './SearchResults.css';
-import { getSanitizedRecipeIngredients } from "../../selectors";
+import {getRecipes, getSanitizedRecipeIngredients} from "../../selectors";
 
 type SearchResultsStateProps = {
-    recipes: State['recipes'],
+    recipes: State['recipes']['recipes'],
     // TODO: Investigate error that pops up when type Record<string, Record<string, string>> is used here
     recipeIdToMealHash: any
 }
@@ -32,7 +32,7 @@ export class SearchResults extends React.Component<SearchResultsProps> {
 
 const mapStateToProps = (state: State) => {
     return {
-        recipes: state.recipes,
+        recipes: getRecipes(state),
         recipeIdToMealHash: getSanitizedRecipeIngredients(state)
     }
 };

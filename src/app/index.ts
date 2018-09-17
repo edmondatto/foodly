@@ -1,3 +1,3 @@
-export { saga } from './sagas';
 export { reducer } from './reducers';
-export { searchRequestSent } from './actions';
+export { saga } from './sagas';
+export { State } from './types'

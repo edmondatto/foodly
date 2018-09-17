@@ -1,8 +1,8 @@
 import * as React from 'react';
-import { SearchBar } from "../SearchBar";
+import { SearchBar } from "../../Recipes/containers/SearchBar/index";
 import './Root.css'
-import { SearchResults } from "../SearchResults";
-import { NavBar } from "../../components/NavBar";
+import { SearchResults } from "../../Recipes";
+import { NavBar } from "../NavBar";
 
 export class Root extends React.Component {
     public render() {
