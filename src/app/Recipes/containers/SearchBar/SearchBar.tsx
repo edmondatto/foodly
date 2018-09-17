@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { State } from "../../types";
 import { searchRequestSent } from "../../actions";
 import './SearchBar.css';
-import {Request} from "../../../types";
+import { Request } from "../../../types";
 
 type SearchBarStateProps = {
     requestState: Request;

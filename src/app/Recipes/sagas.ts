@@ -1,10 +1,6 @@
-import { searchForRecipe } from './services'
 import { all, call, put, takeLatest } from "redux-saga/effects";
+import { searchForRecipe } from './services'
 import { ActionType, recipesReceived, SearchRequestSent, searchRequestStateChanged } from "./actions";
-
-export const saga = function*() {
-    yield all([takeLatest(ActionType.SEARCH_REQUEST_SENT, handleSearch)])
-};
 
 export const handleSearch = function*(action: SearchRequestSent) {
     const { payload: { searchString } } = action;
@@ -18,4 +14,8 @@ export const handleSearch = function*(action: SearchRequestSent) {
     } catch (error) {
         yield put(searchRequestStateChanged('FAILED', 'Oops! Something went wrong.'))
     }
+};
+
+export const saga = function*() {
+    yield all([takeLatest(ActionType.SEARCH_REQUEST_SENT, handleSearch)])
 };

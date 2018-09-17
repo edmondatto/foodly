@@ -12,7 +12,7 @@ export type AnyAction = WeatherDataRequestSent | WeatherDataRequestStateChanged 
 export type WeatherDataRequestSent = {
     type: ActionType.WEATHER_DATA_REQUEST_SENT;
     payload: {
-        location: string;
+        location?: string;
     }
 };
 
@@ -31,7 +31,7 @@ export type WeatherDataReceived = {
     }
 }
 
-export const weatherDataRequestSent = (location: string): WeatherDataRequestSent => ({
+export const weatherDataRequestSent = (location?: string): WeatherDataRequestSent => ({
     type: ActionType.WEATHER_DATA_REQUEST_SENT,
     payload: {
         location
