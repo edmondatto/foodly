@@ -10,3 +10,11 @@ export type Request = {
     state: 'PENDING' | 'ACTIVE' | 'LAGGING' | 'SUCCEEDED' | 'FAILED';
     error: string;
 };
+
+export type ThemeName = 'light' | 'dark';
+
+export type Theme = {
+    background: string;
+    fontColor: string
+
+}
