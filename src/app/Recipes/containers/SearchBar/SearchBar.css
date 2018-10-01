@@ -1,4 +1,38 @@
-form > input, button {
+
+.searchForm {
+  margin: 30px 10%;
+}
+
+.searchForm > input,
+.searchForm > button {
   font-family: "Open Sans", sans-serif;
-  font-weight: lighter;
+  font-weight: 100;
+  font-size: 2em;
+  padding: 10px;
+  border: solid #135589 1px;
+}
+
+.searchForm > button {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.searchForm > button:hover,
+.searchForm > button:active,
+.searchForm > button:focus {
+  color: white;
+  background-color: #135589;
+  outline: none;
+}
+
+.searchForm > input {
+  width: 80%;
+  margin-right: 10px;
+  color: #135589;
+}
+
+.searchForm > input:hover,
+.searchForm > input:focus,
+.searchForm > input:active {
+  outline: none;
 }

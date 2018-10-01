@@ -45,7 +45,7 @@ export class SearchBar extends React.Component<SearchBarProps, SearchBarState>{
 
     render(){
         return (
-          <form onSubmit={this.handleSubmit}>
+          <form onSubmit={this.handleSubmit} className={'searchForm'}>
               <input
                   type={'search'}
                   name=''
@@ -54,7 +54,7 @@ export class SearchBar extends React.Component<SearchBarProps, SearchBarState>{
                   value={this.state.searchString}
               />
               <button type='submit' >
-                  Search
+                  SEARCH
               </button>
           </form>
         )
