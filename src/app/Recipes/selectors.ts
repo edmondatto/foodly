@@ -2,10 +2,10 @@ import { State } from "../types";
 
 export const getRecipes = (state: State) => state.recipes.recipes;
 
-export const getSanitizedRecipeIngredients = (state: State): Record<string, Record<string, string>> | undefined => {
+export const getSanitizedRecipeIngredients = (state: State): Record<string, Record<string, string>> | null => {
     const recipes = getRecipes(state);
 
-    if (!recipes) return;
+    if (!recipes) return null;
 
     const mealIdToIngredientsHash: Record<string, Record<string, string>> = {};
 

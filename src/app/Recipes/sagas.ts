@@ -9,7 +9,6 @@ export const handleSearch = function*(action: SearchRequestSent) {
     try {
         const recipes = yield call(searchForRecipe, searchString);
 
-        yield put(searchRequestStateChanged('SUCCEEDED'));
         yield put(recipesReceived(recipes));
     } catch (error) {
         yield put(searchRequestStateChanged('FAILED', 'Oops! Something went wrong.'))

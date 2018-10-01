@@ -19,7 +19,7 @@ export type WeatherDataRequestSent = {
 export type WeatherDataRequestStateChanged = {
     type: ActionType.WEATHER_DATA_REQUEST_STATE_CHANGED;
     payload: {
-        requestState: Request['state'];
+        requestState: Exclude<Request['state'], 'SUCCEEDED'>;
         error?: Request['error'];
     }
 };

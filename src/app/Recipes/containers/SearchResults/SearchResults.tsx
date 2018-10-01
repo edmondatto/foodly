@@ -7,8 +7,7 @@ import {getRecipes, getSanitizedRecipeIngredients} from "../../selectors";
 
 type SearchResultsStateProps = {
     recipes: State['recipes']['recipes'],
-    // TODO: Investigate error that pops up when type Record<string, Record<string, string>> is used here
-    recipeIdToMealHash: any
+    recipeIdToMealHash: Record<string, Record<string, string>> | null;
 }
 
 type SearchResultsOwnProps = {}

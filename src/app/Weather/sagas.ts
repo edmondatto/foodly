@@ -15,13 +15,12 @@ export const handleWeatherDataPolling = function*(action: WeatherDataRequestSent
         try {
             const weatherData = yield call(getCurrentWeather);
 
-            yield put(weatherDataRequestStateChanged('SUCCEEDED'));
             yield put(weatherDataReceived(weatherData));
         } catch (error) {
             yield put(weatherDataRequestStateChanged('FAILED', 'Oops! Something went wrong.'))
         }
 
-        yield delay(5000);
+        yield call(delay, 5000);
     }
 };
 

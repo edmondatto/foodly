@@ -19,7 +19,7 @@ export type SearchRequestSent = {
 export type SearchRequestStateChanged = {
     type: ActionType.SEARCH_REQUEST_STATE_CHANGED;
     payload: {
-        requestState: Request['state'],
+        requestState: Exclude<Request['state'], 'SUCCEEDED'>,
         error?: Request['error'],
     }
 }
