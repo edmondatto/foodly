@@ -24,7 +24,7 @@ export class SearchResults extends React.Component<SearchResultsProps> {
 
         return(
             <>
-                { recipes && recipes.map(recipe => <RecipeCard {...recipe} key={recipe.idMeal}/>) }
+                { recipes && recipes.map(recipe => <RecipeCard recipe={recipe} ingredientsHash={recipeIdToMealHash} key={recipe.idMeal}/>) }
             </>
         );
     }

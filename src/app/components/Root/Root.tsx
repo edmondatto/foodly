@@ -26,24 +26,24 @@ export class Root extends React.Component {
         const { themeName } = this.state;
 
         return (
-          <Provider value={themeName}>
-              <div className="root">
-                  <Consumer>
-                      { themeName =>
-                          <>
-                              <NavBar
-                                  themeName={themeName}
-                                  theme={themes[themeName]}
-                                  changeTheme={this.toggleTheme}
-                              />
-                              <SearchBar/>
-                              <WeatherWidget />
-                              <SearchResults/>
-                          </>
-                      }
-                  </Consumer>
-              </div>
-          </Provider>
+            <Provider value={themeName}>
+                <div className="root">
+                    <Consumer>
+                        {themeName =>
+                            <>
+                                <NavBar
+                                    themeName={themeName}
+                                    theme={themes[themeName]}
+                                    changeTheme={this.toggleTheme}
+                                />
+                                <SearchBar/>
+                                <WeatherWidget/>
+                                <SearchResults/>
+                            </>
+                        }
+                    </Consumer>
+                </div>
+            </Provider>
         );
     }
 }

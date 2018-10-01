@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Theme, ThemeName} from "../../types";
+import { Theme, ThemeName } from "../../types";
 import './NavBar.css';
 
 export type NavBarProps = {

@@ -1,0 +1,93 @@
+.recipeCard {
+  display: flex;
+  flex-wrap: nowrap;
+  border: solid 1px;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.imageContainer {
+  height: auto;
+  flex-grow: 1;
+  max-width: 300px;
+  margin-right: 10px;
+}
+
+.recipe {
+  display: flex;
+  flex-grow: 4;
+  flex-wrap: wrap;
+  align-self: flex-start;
+}
+
+.recipeHeader {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+  background-color: rgb(19, 85, 137);
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.recipeName {
+  flex: 4;
+  font-size: 1.8em;
+  margin: 0;
+  color: white;
+
+}
+
+.recipeOrigin,
+.recipeCategory {
+  flex: 1;
+  font-size: 1.3em;
+  margin: 0;
+  color: white;
+}
+
+.recipeInstructions {
+  flex-basis: 100%;
+  font-size: 1.3em;
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.recipeIngredientsSection {
+  display: flex;
+  flex-basis: 100%;
+  font-size: 1.1em;
+  flex-wrap: wrap;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 5px;
+  border: #135589 solid 1px;
+  color: #135589;
+}
+
+.recipeIngredientQuantityPair {
+  flex-basis: 20%;
+  font-weight: 100;
+}
+
+.reactIcons {
+  fill: white;
+  font-size: 1.3em;
+  vertical-align: text-top;
+}
+
+.recipeFooter {
+  display: flex;
+  flex-basis: 100%;
+  margin-top: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.videoLinkContainer {
+  flex: 1;
+}
+
+.videoLink {
+  text-decoration: none;
+}
