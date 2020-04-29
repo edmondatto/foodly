@@ -1,7 +1,12 @@
-import {State} from "./types";
+import { Theme, ThemeName } from "./types";
 
-export const initialState: State = {
-    searchRequest: {state: 'PENDING', error: ''},
-    recipes: null,
-    searchString: null
+export const themes: Record<ThemeName, Theme> = {
+    light: {
+        background: '#eee',
+        fontColor: '#135589'
+    },
+    dark: {
+        background: '#135589',
+        fontColor: '#eee'
+    }
 };

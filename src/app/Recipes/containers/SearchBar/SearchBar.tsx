@@ -1,8 +1,9 @@
 import * as React from 'react';
 import { connect } from "react-redux";
-import { Request, State } from "../../types";
+import { State } from "../../types";
 import { searchRequestSent } from "../../actions";
 import './SearchBar.css';
+import { Request } from "../../../types";
 
 type SearchBarStateProps = {
     requestState: Request;

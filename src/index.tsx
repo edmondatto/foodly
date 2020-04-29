@@ -3,8 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { applyMiddleware, compose, createStore } from 'redux';
 import createSagaMiddleware from "redux-saga";
-import {reducer, saga} from "./app";
-import Root from './app/containers/Root/Root';
+import { reducer, saga, Root } from "./app";
 
 const sagaMiddleware = createSagaMiddleware();
 
